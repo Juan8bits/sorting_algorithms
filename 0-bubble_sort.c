@@ -1,27 +1,27 @@
 #include "sort.h"
-
 /**
- * bubble_sort - Function that sorts an array of integers in
- * ascending order using the Bubble sort algorithm.
- * @arr: Array to apply sorting algorithm.
- * @size: size of elements in array.
+ * bubble_sort - bubble sort method.
+ * @array: unsorted array.
+ * @size: size of array.
  */
-void bubble_sort(int *arr, size_t size)
+void bubble_sort(int *array, size_t size)
 {
-	int Ncycle; /*cycles traversed*/
-	int cpsize = size - 1; /*Decremental value per cycle*/
-	int ssize = size; /*Original value of size*/
+	unsigned int c, i;
+	int new = 0;
 
-	for (; cpsize >= 0 ; cpsize--)
+	if (!array || !size)
+		return;
+
+	for (i = 0; i < size - 1; i++)
 	{
-		for (Ncycle = 0; Ncycle <= cpsize; Ncycle++)
+		for (c = 0; c < size - i - 1; c++)
 		{
-			if (arr[Ncycle] > arr[Ncycle + 1] && (Ncycle + 1) < ssize)
+			if (array[c] > array[c + 1])
 			{
-				arr[Ncycle] = arr[Ncycle] ^ arr[Ncycle + 1];
-				arr[Ncycle + 1] = arr[Ncycle] ^ arr[Ncycle + 1];
-				arr[Ncycle] = arr[Ncycle] ^ arr[Ncycle + 1];
-				print_array(arr, size);
+				new = array[c + 1];
+				array[c + 1] = array[c];
+				array[c] = new;
+				print_array(array, size);
 			}
 		}
 	}

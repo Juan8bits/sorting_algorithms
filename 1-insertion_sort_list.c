@@ -28,13 +28,12 @@ void swap_nds(listint_t **list, listint_t **n1, listint_t *n2)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *node = (*list)->next;
-	listint_t *prev = NULL, *tmp = NULL;
+	listint_t *node = NULL, *prev = NULL, *tmp = NULL;
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
 
-	for (; node; node = tmp)
+	for (node = (*list)->next; node; node = tmp)
 	{
 		tmp = node->next;
 		prev = node->prev;

@@ -13,7 +13,7 @@ void swap(int *n1, int *n2)
 }
 
 /**
- * lomuto_partition - Order a subset of an array of integers according to
+ * l_partition - Order a subset of an array of integers according to
  * the lomuto partition scheme, using the last element as pivot.
  * @array: The array of integers.
  * @size: Array's size.
@@ -52,7 +52,7 @@ int l_partition(int *array, size_t size, int l, int r)
 
 /**
  * quick_sort_rec - Quicksort algorithm with recursion and use the Lomuto
-partition scheme.
+ * partition scheme.
  * @array: Array of integers to sort.
  * @size: Array's size.
  * @l: Partition's left side.

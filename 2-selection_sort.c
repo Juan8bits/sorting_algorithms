@@ -11,7 +11,7 @@ void selection_sort(int *arr, size_t size)
 {
 	size_t Ncycle, cpsize, min_value;
 
-	if (!arr)
+	if (arr == NULL)
 		return;
 	for (cpsize = 0; cpsize < size - 1; cpsize++)
 	{

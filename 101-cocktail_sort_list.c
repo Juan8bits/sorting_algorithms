@@ -38,7 +38,7 @@ void swap_nds(listint_t **list, listint_t *n1, listint_t *n2)
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *node = NULL, *next = NULL, *prev = NULL;
-	int end; // Boolean 1 -> false, 0 -> true
+	int end; /* Boolean 1 -> false, 0 -> true */
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
@@ -66,7 +66,7 @@ void cocktail_sort_list(listint_t **list)
 			{
 				swap_nds(list, prev, node);
 				end = 1;
-			        print_list((const listint_t *)*list);
+				print_list((const listint_t *)*list);
 			}
 			else
 				node = node->prev;

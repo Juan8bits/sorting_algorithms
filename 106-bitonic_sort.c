@@ -55,9 +55,9 @@ void section_arr(char mode, int *arr, size_t size, size_t S)
 	section_arr(0, arr + (size / 2), size / 2, S);
 	sort(mode, arr, size);
 	if (mode == 1)
-		printf("Merging [%lu/%lu] (UP):\n", size, S);
+		printf("Result [%lu/%lu] (UP):\n", size, S);
 	else
-		printf("Merging [%lu/%lu] (DOWN):\n", size, S);
+		printf("Result [%lu/%lu] (DOWN):\n", size, S);
 	print_array(arr, size);
 }
 

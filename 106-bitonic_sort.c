@@ -10,7 +10,7 @@ void swap(char mode, int *arr, size_t size)
 	size_t act, jump = size / 2;
 
 	for (act = 0; act <= size; act += jump)
-	{	if (mode == 1 && arr[act] > arr[act + jump])
+	{    if (mode == 1 && arr[act] > arr[act + jump])
 		{
 			arr[act] = arr[act] ^ arr[act + jump];
 			arr[act + jump] = arr[act] ^ arr[act + jump];
@@ -19,11 +19,11 @@ void swap(char mode, int *arr, size_t size)
 	}
 }
 
-
 /**
  * sort -
- *
- *
+ * @mode: Recursion mode (UP/DOWN)
+ * @arr: array.
+ * @size: size of array.
  */
 void sort(char mode, int *arr, size_t size)
 {
@@ -52,13 +52,18 @@ void section_arr(char mode, int *arr, size_t size, size_t S)
 	section_arr(1, arr, size / 2, S);
 	section_arr(0, arr + (size / 2), size / 2, S);
 	sort(mode, arr, size);
+	if (mode == 1)
+                printf("Merging [%lu/%lu] (UP):\n", size, S);
+        else
+                printf("Merging [%lu/%lu] (DOWN):\n", size, S);
+	print_array(arr, size);
 }
 
 /**
  * bitonic_sort - Function that sorts an array of integers in ascending
  * order using the Bitonic sort algorithm.
- * @arr:
- * @size:
+ * @arr: array.
+ * @size: size of array.
  */
 void bitonic_sort(int *arr, size_t size)
 {
